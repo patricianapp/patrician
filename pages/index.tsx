@@ -47,6 +47,7 @@ const Home = () => (
       </div>
     </main>
 
+<p>NODE_ENV = {process.env.NODE_ENV}</p>
     <footer>
       <a
         href="https://zeit.co?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
