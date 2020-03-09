@@ -1,30 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+Patrician is an app that lets you show off your music collection in your own unique way, gathering and importing data from all of your music listening profiles.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Project Vision/Goals
+- **Import your entire library in minutes**: Add music from Spotify, Last.fm, Discogs, your local music player, and more. You can set up continuous imports to keep your collection up-to-date, and fine-tune the settings so it only adds the albums you want. Metadata is acquired through Musicbrainz, but can be overridden on a per-album basis.
+- **Collection Management/Ratings**: Once you've set up your imports, you can add unlimited custom tags, write reviews for your albums and artists, organize your collection into folders, and many more advanced features.
+- **One Link to Rule Them All**: Your Patrician profile will be the all-encompassing way to share your music library with others, combining data from Spotify, Last.fm, RateYourMusic, Discogs, and more in an elegant, customizable fashion.
+- **Self-expression**: Your profile is an expression of your unique identity. You can add custom images, text, and widgets to the sidebars, categorize your music the way you want, and even write an "about me" page.
+- **Powerful Search**: Your collection can be searched, filtered, and compared with other collections using advanced search queries.
+- **Recommendation Inbox**: Users can share recommendations with each other, and manage lists of recommendations they've received (including outside of the platform).
+- **Public APIs**: Collections can be accessed and searched using public APIs at no cost.
+- **Exporting**: Collections can always be exported, so you're never locked into the platform.
