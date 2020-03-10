@@ -1,13 +1,13 @@
-// copied from @samuelcastro: https://github.com/zeit/next.js/issues/9542
+// code copied from @samuelcastro: https://github.com/zeit/next.js/issues/9542
+// which is an alteration of: https://github.com/zeit/next.js/blob/canary/examples/with-apollo/lib/apollo.js
 
 import React, { ReactNode } from 'react';
 import App, { AppContext } from 'next/app';
 import Head from 'next/head';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { ApolloClient } from 'apollo-client';
-import { NormalizedCacheObject } from 'apollo-cache-inmemory';
+import { NormalizedCacheObject, InMemoryCache } from 'apollo-cache-inmemory';
 import { NextPageContext, NextPage } from 'next';
-import { InMemoryCache } from 'apollo-cache-inmemory'
 import { HttpLink } from 'apollo-link-http'
 import fetch from 'isomorphic-unfetch'
 
