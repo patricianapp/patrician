@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import { withApollo } from "../lib/apollo";
 
-const Home = () => (
+const Home = () => {
+
+  return (
   <div className="container">
     <Head>
       <title>Create Next App</title>
@@ -201,5 +204,6 @@ const Home = () => (
     `}</style>
   </div>
 )
+    }
 
-export default Home
+export default withApollo({ssr: true})(Home);
