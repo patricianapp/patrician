@@ -5,10 +5,8 @@ import React, { ReactNode } from 'react';
 import App, { AppContext } from 'next/app';
 import Head from 'next/head';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { ApolloClient } from 'apollo-client';
-import { NormalizedCacheObject, InMemoryCache } from 'apollo-cache-inmemory';
+import { ApolloClient, InMemoryCache, HttpLink, NormalizedCacheObject } from '@apollo/client';
 import { NextPageContext, NextPage } from 'next';
-import { HttpLink } from 'apollo-link-http'
 import fetch from 'isomorphic-unfetch'
 
 export default function createApolloClient(initialState, ctx) {

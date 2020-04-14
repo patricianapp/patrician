@@ -53,6 +53,7 @@ type Query {
   collection: [CollectionItem!]!
   recipe(recipeId: Int!): Recipe
   recipes: [Recipe!]!
+  getUser(username: String!): User!
 }
 
 type Rate {

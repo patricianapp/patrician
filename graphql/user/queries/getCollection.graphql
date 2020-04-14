@@ -1,0 +1,9 @@
+query getCollection {
+  getUser(username: "user1") {
+    username
+    collection {
+      artist
+      albumName
+    }
+  }
+}
