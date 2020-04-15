@@ -2,7 +2,7 @@
 - add text
 - consistent text height
   - make text smaller on long titles
-  - make text scroll if it doesnt fit
+  - make text show (...) if it doesn't fit, scroll on hover
 - custom fonts/colors?
 - expand on hover
 - when expanded, show actions
