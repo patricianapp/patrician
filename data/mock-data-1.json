@@ -2,7 +2,7 @@
   {
     "artist": "Amon Tobin",
     "title": "Out From Out Where",
-    "rating": 9,
+    "rating": "9",
     "mbid": "076e4121-045e-3e6e-bcac-7c85cca4462d",
     "plays": 300,
     "review": ""
@@ -12,15 +12,15 @@
     "title": "Aqualung",
     "rating": "TBD",
     "mbid": "204cc47e-2e1a-3877-8e1e-d14bfffd19aa",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Monolord",
     "title": "Vænir",
-    "rating": 8.5,
+    "rating": "8.5",
     "mbid": "3121b8e6-e22a-4c0f-a78e-f9ff24ffe5c9",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
@@ -28,13 +28,13 @@
     "title": "Söngvar elds og óreiðu",
     "rating": "Q",
     "mbid": "41758fd1-87c0-497b-91b0-6f7814d33817",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Animals As Leaders",
     "title": "The Joy of Motion",
-    "rating": 9.5,
+    "rating": "9.5",
     "mbid": "51a74d4a-f21d-49de-8655-5335dafd82d2",
     "plays": 800,
     "review": ""
@@ -42,7 +42,7 @@
   {
     "artist": "Niechęć",
     "title": "Niechęć",
-    "rating": 8.5,
+    "rating": "8.5",
     "mbid": "5b18a603-0859-4cda-b092-112d213d94b0",
     "plays": 350,
     "review": ""
@@ -50,23 +50,23 @@
   {
     "artist": "Electric Wizard",
     "title": "Dopethrone",
-    "rating": 9.5,
+    "rating": "9.5",
     "mbid": "5ebf4f0a-61ba-3829-9d0c-0a0e5ad8897e",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Death",
     "title": "Human",
-    "rating": 7,
+    "rating": "7",
     "mbid": "6346903b-4480-3b0f-adef-90fe0b338509",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Converge",
     "title": "All We Love We Leave Behind",
-    "rating": 9,
+    "rating": "9",
     "mbid": "86037f34-72c6-4ad9-8072-f20bb839f78d",
     "plays": 600,
     "review": ""
@@ -74,23 +74,23 @@
   {
     "artist": "Five Star Hotel",
     "title": "Gray Data",
-    "rating": 8.8,
+    "rating": "8.8",
     "mbid": "8af6b3fc-0baf-41a1-85da-8f81e3ad9d0a",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Vektor",
     "title": "Terminal Redux",
-    "rating": 8.5,
+    "rating": "8.5",
     "mbid": "8c14bbdd-de87-48fa-8cc9-153c3d56583e",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Death Grips",
     "title": "The Money Store",
-    "rating": 10,
+    "rating": "10",
     "mbid": "aa0b4e86-358e-4c92-aecd-94f5f59233f7",
     "plays": 1000,
     "review": "best album ever"
@@ -98,15 +98,15 @@
   {
     "artist": "Jaco Pastorius",
     "title": "Jaco Pastorius",
-    "rating": 8,
+    "rating": "8",
     "mbid": "acc5bdc4-64dc-462c-bf80-5333c9172cd7",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Oranssi Pazuzu",
     "title": "Värähtelijä",
-    "rating": 8,
+    "rating": "8",
     "mbid": "c655270f-dbe2-4c27-84aa-159b0d2af5d3",
     "plays": 250,
     "review": ""
@@ -114,7 +114,7 @@
   {
     "artist": "Flying Lotus",
     "title": "Cosmogramma",
-    "rating": 9.8,
+    "rating": "9.8",
     "mbid": "ddae2c76-1433-4a9a-be05-3447bda75eee",
     "plays": 750,
     "review": "space jazz"
@@ -124,15 +124,15 @@
     "title": "In the Nightside Eclipse",
     "rating": "TBD",
     "mbid": "e8170089-f81a-3103-bb22-e6f43c4fcaf9",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
     "artist": "Jacob's Mouse",
     "title": "I'm Scared",
-    "rating": 8.5,
+    "rating": "8.5",
     "mbid": "e978960e-9495-3e6c-83e1-e708a0c9a508",
-    "plays": "",
+    "plays": 0,
     "review": ""
   },
   {
@@ -146,7 +146,7 @@
   {
     "artist": "Converge",
     "title": "Jane Doe",
-    "rating": 10,
+    "rating": "10",
     "mbid": "f56e3b38-c620-32f4-9845-2e2115f5e96f",
     "plays": 900,
     "review": ""

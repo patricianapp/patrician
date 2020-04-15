@@ -10,7 +10,11 @@
 export interface getCollection_getUser_collection {
   __typename: "CollectionItem";
   artist: string;
-  albumName: string;
+  title: string;
+  rating: string;
+  mbid: string;
+  plays: number;
+  review: string;
 }
 
 export interface getCollection_getUser {
