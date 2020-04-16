@@ -1,12 +1,20 @@
-import React, { ReactElement } from 'react';
-import { Paper, makeStyles, createStyles, Theme, Typography } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import React, { ReactElement, useState } from 'react';
+import {
+  makeStyles,
+  createStyles,
+  Theme,
+  Typography,
+  Card,
+  CardActionArea,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+  // Box,
+} from '@material-ui/core';
+import { positions } from '@material-ui/system';
 import { getCollection_getUser_collection } from '../../../__generated__/getCollection';
+import clsx from 'clsx';
 
 type CollectionItem = Omit<getCollection_getUser_collection, '__typename'>;
 
@@ -19,13 +27,55 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      position: 'relative',
       width:200,
+      height:285,
+      transition: 'height 0.3s',
+      zIndex: (props: {hovered: boolean}) => props.hovered ? 8000 : 0,
+      '&:hover': {
+        height:350,
+        transition: 'height 0.3s',
+        // TODO: itemText scroll on root hover (if the text is overflowing)
+      }
+    },
+    '@keyframes textMarquee': {
+      from: {
+        transform: 'translateX(0%)',
+        right: '0%',
+        // textAlign: 'left',
+        // right: '-100',
+        // marginRight: '0',
+      },
+      to: {
+        transform: 'translateX(-100%)',
+        // transform: 'translateX(-100%)',
+        right: '-100%'
+        // textAlign: 'right'
+        // right: '0',
+        // marginRight: '100px',
+      }
     },
     itemText: {
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
-      textAlign: 'center'
+      textAlign: 'center',
+
+      // '&:hover': {
+      //   right: '0%',
+      //   transform: 'translateX(0%)',
+      // }
+    },
+    itemTextHovered: {
+      animationName: '$textMarquee',
+      animationDuration: '3s',
+      animationPlayState: (props: {hovered: boolean}) => props.hovered ? 'running' : 'paused',
+      animationIterationCount: 'infinite',
+      animationDirection: 'alternate',
+      display: 'inline-block',
+      position: 'relative',
+      right: '-100%',
+      transform: 'translateX(-100%)',
     },
     control: {
       padding: theme.spacing(2),
@@ -34,20 +84,30 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function CollectionItemComponent({item}: Props): ReactElement {
-  const classes = useStyles();
+  const [hovered, setHovered] = useState(false);
+  const styleProps = { hovered };
+  const classes = useStyles(styleProps);
+  const longText = item.title.length > 15;
+
   return (
-    <Card className={classes.root}>
+    <div style={{height: '300px'}}>
+    <Card
+      className={classes.root}
+      onMouseEnter={() => {setHovered(true)}}
+      onMouseLeave={() => {setHovered(false)}}
+      >
       <CardActionArea>
         <CardMedia
           component="img"
           alt={`${item.title}`}
           height="200"
-          image={`https://coverartarchive.org/release-group/${item.mbid}/front-250`}
-          title="Contemplative Reptile"
+          image={item.coverArt ? item.coverArt :
+            `https://coverartarchive.org/release-group/${item.mbid}/front-250`}
+          title={`${item.title}`}
         />
         <CardContent>
-          <Typography className={classes.itemText} gutterBottom>{item.artist} </Typography>
-          <Typography className={classes.itemText} gutterBottom>{item.title} </Typography>
+          <div style={{height:'30px'}}><Typography className={classes.itemText} gutterBottom>{item.artist} </Typography></div>
+          <div style={{height:'30px'}}><Typography className={clsx(classes.itemText, {[classes.itemTextHovered]: hovered && longText})} gutterBottom>{item.title} </Typography></div>
         </CardContent>
       </CardActionArea>
       <CardActions>
@@ -59,5 +119,6 @@ export default function CollectionItemComponent({item}: Props): ReactElement {
         </Button>
       </CardActions>
     </Card>
+    </div>
   );
 }

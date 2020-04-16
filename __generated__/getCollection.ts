@@ -15,6 +15,7 @@ export interface getCollection_getUser_collection {
   mbid: string;
   plays: number;
   review: string;
+  coverArt?: string;
 }
 
 export interface getCollection_getUser {
