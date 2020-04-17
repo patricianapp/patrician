@@ -1,0 +1,15 @@
+query getCollection {
+  user(where: {id: $userId}) {
+    username
+    collection {
+      artist
+      title
+      itemDetails {
+        mbid
+        coverArt
+      }
+      rating
+      plays
+    }
+  }
+}

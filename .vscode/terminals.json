@@ -1,0 +1,14 @@
+{
+  "autorun": true,
+  "terminals": [
+    {
+      "name": "API",
+      "execute": false,
+      "commands": [
+        "cd ../patrician-api",
+        "clear",
+        "npm start"
+      ]
+    }
+  ]
+}
