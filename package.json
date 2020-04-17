@@ -2,7 +2,7 @@
   "name": "patrician",
   "version": "0.1.0",
   "private": true,
-  "author": "Patrician Team",
+  "author": "Elias Jackson",
   "scripts": {
     "dev": "next dev -p 8900",
     "build": "next build",
@@ -17,7 +17,7 @@
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.3.0",
+    "next": "^9.3.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
@@ -35,7 +35,6 @@
     "type": "git",
     "url": "git+https://github.com/patricianapp/patrician.git"
   },
-  "author": "Elias Jackson",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/patricianapp/patrician/issues"

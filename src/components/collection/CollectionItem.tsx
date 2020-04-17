@@ -75,7 +75,7 @@ export default function CollectionItemComponent({item}: Props): ReactElement {
   const [hovered, setHovered] = useState(false);
   const styleProps = { hovered };
   const classes = useStyles(styleProps);
-  const longText = item.title.length > 15;
+  const longText = item.title.length > 20; // TODO: Make this conditional based on width of card and title
 
   return (
     <div style={{height: '300px'}}>
