@@ -13,10 +13,10 @@ import {
   // Box,
 } from '@material-ui/core';
 import { positions } from '@material-ui/system';
-import { getCollection_getUser_collection } from '../../../__generated__/getCollection';
+import { getCollection_user_collection } from '../../../__generated__/getCollection';
 import clsx from 'clsx';
 
-type CollectionItem = Omit<getCollection_getUser_collection, '__typename'>;
+type CollectionItem = Omit<getCollection_user_collection, '__typename'>;
 
 interface Props {
   item: CollectionItem;
@@ -42,17 +42,10 @@ const useStyles = makeStyles((theme: Theme) =>
       from: {
         transform: 'translateX(0%)',
         right: '0%',
-        // textAlign: 'left',
-        // right: '-100',
-        // marginRight: '0',
       },
       to: {
         transform: 'translateX(-100%)',
-        // transform: 'translateX(-100%)',
         right: '-100%'
-        // textAlign: 'right'
-        // right: '0',
-        // marginRight: '100px',
       }
     },
     itemText: {
@@ -60,11 +53,6 @@ const useStyles = makeStyles((theme: Theme) =>
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       textAlign: 'center',
-
-      // '&:hover': {
-      //   right: '0%',
-      //   transform: 'translateX(0%)',
-      // }
     },
     itemTextHovered: {
       animationName: '$textMarquee',
@@ -101,8 +89,8 @@ export default function CollectionItemComponent({item}: Props): ReactElement {
           component="img"
           alt={`${item.title}`}
           height="200"
-          image={item.coverArt ? item.coverArt :
-            `https://coverartarchive.org/release-group/${item.mbid}/front-250`}
+          image={item.itemDetails.coverArt ? item.itemDetails.coverArt :
+            `https://coverartarchive.org/release-group/${item.itemDetails.mbid}/front-250`}
           title={`${item.title}`}
         />
         <CardContent>

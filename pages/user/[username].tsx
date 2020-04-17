@@ -16,31 +16,43 @@ function UserPage({}: Props): ReactElement {
   const router = useRouter();
   const { username } = router.query;
 
+  // TODO: Get query from graphql folder
   const GET_COLLECTION_QUERY = gql`
-    query getCollection {
-      getUser(username: "user1") {
+    query getCollection($userId: ID!) {
+      user(where: {id: $userId}) {
         username
         collection {
           artist
-          albumName as title
+          title
+          itemDetails {
+            mbid
+            coverArt
+          }
+          rating
+          plays
         }
       }
     }
   `;
 
-  let loading, error, data;
+  let loading = true;
+  let error, data;
   if(username === 'mock') {
-    data = {collection: collectionMockData};
+    data = {user: {collection: collectionMockData}};
     loading = error = false;
   }
   else {
-    ({ loading, error, data } = useQuery(GET_COLLECTION_QUERY));
+    ({ loading, error, data } = useQuery(GET_COLLECTION_QUERY, {
+      variables: {
+        userId: username
+      }
+    }));
   }
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   return (
     <div>
-      <CollectionComponent collection={data.collection}></CollectionComponent>
+      <CollectionComponent collection={data.user.collection}></CollectionComponent>
     </div>
   );
 }

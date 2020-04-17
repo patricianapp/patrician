@@ -1,9 +1,9 @@
 import React, { ReactElement } from 'react'
 import CollectionItemComponent from './CollectionItem';
 import { Grid, makeStyles, createStyles, Theme } from '@material-ui/core';
-import { getCollection_getUser_collection } from '../../../__generated__/getCollection';
+import { getCollection_user_collection } from '../../../__generated__/getCollection';
 
-type CollectionItem = Omit<getCollection_getUser_collection, '__typename'>;
+type CollectionItem = Omit<getCollection_user_collection, '__typename'>;
 
 interface Props {
   collection: Array<CollectionItem>
@@ -34,8 +34,8 @@ export default function CollectionComponent({ collection }: Props): ReactElement
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            {collection.map((item) => (
-              <Grid key={item.mbid} item>
+            {collection.map((item, itemIndex) => (
+              <Grid key={itemIndex} item>
                 <CollectionItemComponent item={item} />
               </Grid>
             ))}

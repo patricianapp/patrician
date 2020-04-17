@@ -1,13 +1,14 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
+  "name": "patrician",
+  "version": "0.1.1",
   "private": true,
+  "author": "Patrician Team",
   "scripts": {
     "dev": "next dev -p 8900",
     "build": "next build",
     "start": "next start",
     "update-schema": "cp ../patrician-api/schema.gql .",
-    "generate": "apollo client:codegen --localSchemaFile schema.gql --target typescript --includes=\"graphql/**/*.graphql\" --outputFlat --output graphql"
+    "generate": "apollo client:codegen --endpoint http://localhost:8912/graphql --target typescript --includes=\"graphql/**/*.graphql\" --outputFlat"
   },
   "dependencies": {
     "@apollo/client": "^3.0.0-beta.39",
@@ -39,5 +40,5 @@
   "bugs": {
     "url": "https://github.com/patricianapp/patrician/issues"
   },
-  "homepage": "https://github.com/patricianapp/patrician#readme"
+  "homepage": "https://patrician.app"
 }

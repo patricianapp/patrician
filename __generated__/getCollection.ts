@@ -7,23 +7,27 @@
 // GraphQL query operation: getCollection
 // ====================================================
 
-export interface getCollection_getUser_collection {
+export interface getCollection_user_collection_itemDetails {
+  __typename: "Item";
+  mbid: string | null;
+  coverArt: string | null;
+}
+
+export interface getCollection_user_collection {
   __typename: "CollectionItem";
   artist: string;
   title: string;
+  itemDetails: getCollection_user_collection_itemDetails | null;
   rating: string;
-  mbid: string;
-  plays: number;
-  review: string;
-  coverArt?: string;
+  plays: number | null;
 }
 
-export interface getCollection_getUser {
+export interface getCollection_user {
   __typename: "User";
   username: string;
-  collection: getCollection_getUser_collection[];
+  collection: getCollection_user_collection[] | null;
 }
 
 export interface getCollection {
-  getUser: getCollection_getUser;
+  user: getCollection_user;
 }
