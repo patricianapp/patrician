@@ -137,7 +137,6 @@ export const withApollo = ({ ssr = false } = {}) => (
 
 		return (
 			<ApolloProvider client={client}>
-				{/* eslint-disable-next-line react/jsx-props-no-spreading */}
 				<PageComponent {...pageProps} />
 			</ApolloProvider>
 		);
@@ -192,7 +191,6 @@ export const withApollo = ({ ssr = false } = {}) => (
 						// your entire AppTree once for every query. Check out apollo fragments
 						// if you want to reduce the number of rerenders.
 						// https://www.apollographql.com/docs/react/data/fragments/
-						// eslint-disable-next-line react/jsx-props-no-spreading
 						await getDataFromTree(<AppTree {...props} />);
 					} catch (error) {
 						// Prevent Apollo Client GraphQL errors from crashing SSR.
