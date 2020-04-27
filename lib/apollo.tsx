@@ -2,20 +2,20 @@ import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from '@apollo/c
 import fetch from 'isomorphic-unfetch';
 
 export const createApolloClient = () => {
-  const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    link: new HttpLink({
-      fetch,
-      credentials: 'same-origin',
-      uri: `${process.env.apiUrl}/graphql`,
-    })
-  });
+	const client = new ApolloClient({
+		cache: new InMemoryCache(),
+		link: new HttpLink({
+			fetch,
+			credentials: 'same-origin',
+			uri: `${process.env.apiUrl}/graphql`,
+		}),
+	});
 
-  return client;
+	return client;
 };
 
 export const withApollo = (Component) => (
-  <ApolloProvider client={createApolloClient()}>
-    <Component />
-  </ApolloProvider>
+	<ApolloProvider client={createApolloClient()}>
+		<Component />
+	</ApolloProvider>
 );

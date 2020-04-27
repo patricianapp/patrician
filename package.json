@@ -8,7 +8,7 @@
 		"build": "next build",
 		"start": "next start",
 		"generate": "apollo client:codegen --endpoint http://localhost:8912/graphql --target typescript --includes=\"graphql/**/*.graphql\" --outputFlat",
-		"prettier": "prettier \"./src/**/*.ts*\" \"./pages/**/*.ts*\" --write"
+		"prettier": "prettier \"./**/*.(j|t)s(|x)\" --write"
 	},
 	"dependencies": {
 		"@apollo/client": "^3.0.0-beta.39",

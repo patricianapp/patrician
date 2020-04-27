@@ -1,11 +1,11 @@
 const devEnv = {
-  apiUrl: 'http://localhost:8912'
+	apiUrl: 'http://localhost:8912',
 };
 
 const prodEnv = {
-  apiUrl: 'https://api.patrician.app'
+	apiUrl: 'https://api.patrician.app',
 };
 
 module.exports = {
-  env: process.env.NODE_ENV === 'development' ? devEnv : prodEnv
+	env: process.env.NODE_ENV === 'development' ? devEnv : prodEnv,
 };
