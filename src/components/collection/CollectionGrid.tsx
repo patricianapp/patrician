@@ -1,13 +1,13 @@
-import React, { ReactElement } from 'react'
-import CollectionItemComponent from './CollectionItem';
-import { Grid, makeStyles, createStyles, Theme } from '@material-ui/core';
-import { getCollection_user_collection } from '../../../__generated__/getCollection';
+import React, { ReactElement } from "react";
+import CollectionItemCard from "./CollectionItemCard";
+import { Grid, makeStyles, createStyles, Theme } from "@material-ui/core";
+import { getCollection_user_collection } from "../../../__generated__/getCollection";
 
-type CollectionItem = Omit<getCollection_user_collection, '__typename'>;
+type CollectionItem = Omit<getCollection_user_collection, "__typename">;
 
 interface Props {
-  collection: Array<CollectionItem>
-  filters?: {}
+  collection: Array<CollectionItem>;
+  filters?: {};
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,12 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
     control: {
       padding: theme.spacing(2),
     },
-  }),
+  })
 );
 
 const data = [1, 2, 3];
 
-export default function CollectionComponent({ collection }: Props): ReactElement {
+export default function CollectionGrid({ collection }: Props): ReactElement {
   const classes = useStyles();
   return (
     <div>
@@ -36,12 +36,12 @@ export default function CollectionComponent({ collection }: Props): ReactElement
           <Grid container spacing={2}>
             {collection.map((item, itemIndex) => (
               <Grid key={itemIndex} item>
-                <CollectionItemComponent item={item} />
+                <CollectionItemCard item={item} />
               </Grid>
             ))}
           </Grid>
         </Grid>
       </Grid>
     </div>
-  )
+  );
 }

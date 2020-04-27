@@ -1,13 +1,12 @@
 {
   "name": "patrician",
-  "version": "0.1.0",
+  "version": "0.2.0-canary.0",
   "private": true,
-  "author": "Elias Jackson",
+  "author": "Patrician Team",
   "scripts": {
     "dev": "next dev -p 8900",
     "build": "next build",
     "start": "next start",
-    "update-schema": "cp ../patrician-api/schema.gql .",
     "generate": "apollo client:codegen --endpoint http://localhost:8912/graphql --target typescript --includes=\"graphql/**/*.graphql\" --outputFlat"
   },
   "dependencies": {
