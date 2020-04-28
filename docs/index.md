@@ -2,7 +2,7 @@ Welcome to our documentation!
 
 (**Developers**: For info on contributing, including a glossary of the tools and frameworks we use, check out our developer guide.)
 
-Below is our user FAQ. If your question is not answered here, you can leave a post in our [forum]() and we'll help you out.
+Below is our user FAQ. If your question is not answered here, you can leave a post in our [forum](#) and we'll help you out.
 
 ## Basics
 

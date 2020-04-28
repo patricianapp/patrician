@@ -51,15 +51,6 @@
 			"pre-commit": "lint-staged && tsc -p ./tsconfig.json && yarn test"
 		}
 	},
-	"lint-staged": {
-		"*.ts": [
-			"eslint --fix",
-			"prettier --write"
-		],
-		"*.{js,json}": [
-			"prettier --write"
-		]
-	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/patricianapp/patrician.git"

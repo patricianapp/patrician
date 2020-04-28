@@ -3,7 +3,7 @@ site_description: 'A webpage for your music collection'
 site_author: 'Patrician Team'
 docs_dir: docs/
 site_dir: public/docs
-repo_name: 'patricianapp/docs'
+repo_name: 'patricianapp/patrician'
 repo_url: 'https://github.com/patricianapp/patrician'
 nav:
   - Home: index.md
