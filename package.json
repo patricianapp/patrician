@@ -5,12 +5,13 @@
 	"author": "Patrician Team",
 	"scripts": {
 		"build": "next build",
+		"build-docs": "mkdocs build",
 		"dev": "next dev -p 8900",
 		"generate": "apollo client:codegen --endpoint http://localhost:8912/graphql --target typescript --includes=\"graphql/**/*.graphql\" --outputFlat",
 		"lint": "eslint './**/*.{js,ts,tsx}' --fix",
 		"prettier": "prettier \"./**/*.{js,ts,tsx}\" --write",
 		"start": "next start",
-		"test": "jest --verbose --coverage",
+		"test": "jest --verbose --coverage --passWithNoTests",
 		"test:watch": "jest --watch"
 	},
 	"dependencies": {

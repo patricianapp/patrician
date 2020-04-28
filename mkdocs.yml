@@ -1,0 +1,12 @@
+site_name: Patrician Docs
+site_description: 'A webpage for your music collection'
+site_author: 'Patrician Team'
+docs_dir: docs/
+site_dir: public/docs
+repo_name: 'patricianapp/docs'
+repo_url: 'https://github.com/patricianapp/patrician'
+nav:
+  - Home: index.md
+  - Search Guide: user-guide/search-guide.md
+theme:
+  name: 'material'
