@@ -14,23 +14,23 @@ Patrician's search engine is based on the [Lucene](https://lucene.apache.org/cor
 
 ## By collection data
 
-| What to search                                         | How to search it                                          |
-| ------------------------------------------------------ | --------------------------------------------------------- |
-| Search by tag                                          | `tag:kickass-riffs`                                       |
-| Items in a list                                        | `list:nostalgic-albums`                                   |
-| Items in a folder                                      | `folder:vinyl`                                            |
-| Items in a view (views are saved queries)              | `view:current-favs`                                       |
-| Items with a certain rating                            | `rating:8`<br>`rating-gt:8`<br>`rating-lt:8`<br>          |
-| Items that have been rated                             | `has:rating`                                              |
-| Items that have been reviewed                          | `has:review`                                              |
-| Items that have certain terms in the review            | `review-contains:"awesome"`                               |
-| Items that have an artist review                       | `has:artist-review`                                       |
-| Items that have favorite tracks                        | `has:favorite-tracks`                                     |
-| Items that have likes and dislikes                     | `has:likes-dislikes`                                      |
-| Items added to collection during a certain time period | `added-before:01/05/2019`<br>`added-after:2017/12/20`<br> |
-| Items in wishlist                                      | `in:wishlist`                                             |
-| Items that are also in another user's collection       | `in:user/afantano`                                        |
-| Items that are also in another user's collection view  | `in:user/afantano/loved-list`                             |
+| What to search                                   | How to search it                                          |
+| ------------------------------------------------ | --------------------------------------------------------- |
+| Search by tag                                    | `tag:kickass-riffs`                                       |
+| Items in a list                                  | `list:nostalgic-albums`                                   |
+| Items in a folder                                | `folder:vinyl`                                            |
+| Items in a view (views are saved queries)        | `view:current-favs`                                       |
+| Has a certain rating                             | `rating:8`<br>`rating-gt:8`<br>`rating-lt:8`<br>          |
+| Has rating                                       | `has:rating`                                              |
+| Has review                                       | `has:review`                                              |
+| Review has certain terms                         | `review-contains:"awesome"`                               |
+| Artist review exists                             | `has:artist-review`                                       |
+| Has favorite tracks                              | `has:favorite-tracks`                                     |
+| Has likes and dislikes                           | `has:likes-dislikes`                                      |
+| Added to collection during a certain time period | `added-before:01/05/2019`<br>`added-after:2017/12/20`<br> |
+| In wishlist                                      | `in:wishlist`                                             |
+| Also in another user's collection                | `in:user/afantano`                                        |
+| Also in another user's collection view           | `in:user/afantano/loved-list`                             |
 
 ## By item metadata
 
@@ -45,14 +45,14 @@ These require that the user has set up Last.fm or ListenBrainz integration to lo
 
 You can also sort by plays using the "Sort" dropdown menu, or the `sort` field if you're using the GraphQL API.
 
-| What to search                                                 | How to search it                                                                                                                                                                                                                                                                                                   |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Items with certain amount of total plays                       | `plays-gt:300`<br>`plays-lt:150`<br>                                                                                                                                                                                                                                                                               |
-| Items with certain amount of total plays within a certain year | `plays-gt:300 plays-in:2020`                                                                                                                                                                                                                                                                                       |
-| Items with certain amount of total plays before a certain year | `plays-gt:300 plays-before:2020`                                                                                                                                                                                                                                                                                   |
-| Items with certain amount of total plays within a date range   | `plays-gt:300 plays-after:2019/05/18 plays-before:2019/08/27`                                                                                                                                                                                                                                                      |
-| Items with last listened within a date range                   | `last-listened-after:2019/08/27`<br>`last-listened-after:2019`<br>`last-listened-after:2010s`<br><br>`last-listened-before:2019/08/27`<br>`last-listened-before:2019`<br>`last-listened-before:2010s`<br><br>`last-listened-on:2019/08/27`<br><br>`last-listened-in:2019`<br>`last-listened-in:2010s`<br>          |
-| Items with first listened within a date range                  | `first-listened-after:2019/08/27`<br>`first-listened-after:2019`<br>`first-listened-after:2010s`<br><br>`first-listened-before:2019/08/27`<br>`first-listened-before:2019`<br>`first-listened-before:2010s`<br><br>`first-listened-on:2019/08/27`<br><br>`first-listened-in:2019`<br>`first-listened-in:2010s`<br> |
+| What to search                                      | How to search it                                                                                                                                                                                                                                                                                                   |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Certain amount of total plays                       | `plays-gt:300`<br>`plays-lt:150`<br>                                                                                                                                                                                                                                                                               |
+| Certain amount of total plays within a certain year | `plays-gt:300 plays-in:2020`                                                                                                                                                                                                                                                                                       |
+| Certain amount of total plays before a certain year | `plays-gt:300 plays-before:2020`                                                                                                                                                                                                                                                                                   |
+| Certain amount of total plays within a date range   | `plays-gt:300 plays-after:2019/05/18 plays-before:2019/08/27`                                                                                                                                                                                                                                                      |
+| Last listened within a date range                   | `last-listened-after:2019/08/27`<br>`last-listened-after:2019`<br>`last-listened-after:2010s`<br><br>`last-listened-before:2019/08/27`<br>`last-listened-before:2019`<br>`last-listened-before:2010s`<br><br>`last-listened-on:2019/08/27`<br><br>`last-listened-in:2019`<br>`last-listened-in:2010s`<br>          |
+| First listened within a date range                  | `first-listened-after:2019/08/27`<br>`first-listened-after:2019`<br>`first-listened-after:2010s`<br><br>`first-listened-before:2019/08/27`<br>`first-listened-before:2019`<br>`first-listened-before:2010s`<br><br>`first-listened-on:2019/08/27`<br><br>`first-listened-in:2019`<br>`first-listened-in:2010s`<br> |
 
 ## Operators/Symbols
 
