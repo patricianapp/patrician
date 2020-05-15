@@ -1,86 +1,88 @@
-## Example queries
+# Guide
 
-Searching for a specific album:
+Patrician's search engine is based on the [Lucene](https://lucene.apache.org/core/7_7_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#package.description) query syntax, though is not feature-complete with it. For a comparison between the two, see below.
 
-```
-my bloody valentine loveless
-artist:'my bloody valentine' loveless
-artistId:'my-bloody-valentine-ir1' loveless
-id:'my-bloody-valentine-loveless'
-```
+## Basics
 
-Browsing:
+| What to search      | How to search it                                                                                                                            |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Search for an album | `master of reality`                                                                                                                         |
+| Search by artist    | `artist:"black sabbath"`                                                                                                                    |
+| Search by artist ID | `artistId:black-sabbath-uk1`                                                                                                                |
+| Use multiple fields | `artistId:black-sabbath-uk1 released:1971`                                                                                                  |
+| Search by ID        | `id:black-sabbath-master-of-reality-1`<br>`mbid:e51e9779-2edc-3b39-959c-299fdb5ed940`<br>`spotifyId:7pGb2cOGVz6vLyaZaKOQ7D`<br>`rymId:2277` |
 
-```
-artist:'mastodon' released-before:2009 genre:'sludge metal'
-list:'nostalgic-albums' tag:heavy rating-gt:8 has:review
-added-in:2020 plays-gt:50
-```
+## By collection data
 
-Comparing collections:
+| What to search                                         | How to search it                                          |
+| ------------------------------------------------------ | --------------------------------------------------------- |
+| Search by tag                                          | `tag:kickass-riffs`                                       |
+| Items in a list                                        | `list:nostalgic-albums`                                   |
+| Items in a folder                                      | `folder:vinyl`                                            |
+| Items in a view (views are saved queries)              | `view:current-favs`                                       |
+| Items with a certain rating                            | `rating:8`<br>`rating-gt:8`<br>`rating-lt:8`<br>          |
+| Items that have been rated                             | `has:rating`                                              |
+| Items that have been reviewed                          | `has:review`                                              |
+| Items that have certain terms in the review            | `review-contains:"awesome"`                               |
+| Items that have an artist review                       | `has:artist-review`                                       |
+| Items that have favorite tracks                        | `has:favorite-tracks`                                     |
+| Items that have likes and dislikes                     | `has:likes-dislikes`                                      |
+| Items added to collection during a certain time period | `added-before:01/05/2019`<br>`added-after:2017/12/20`<br> |
+| Items in wishlist                                      | `in:wishlist`                                             |
+| Items that are also in another user's collection       | `in:user/afantano`                                        |
+| Items that are also in another user's collection view  | `in:user/afantano/loved-list`                             |
 
-```
-in:user/afantano
-in:user/afantano/loved-list     # This is a view within a user's collection
-```
+## By item metadata
 
-Seeing your play stats (note: you can sort by plays using the "Sort" dropdown menu):
+| What to search | How to search it                                                                                                                                                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Genre          | `genre:industrial-black-metal`                                                                                                                                                                                                         |
+| Release date   | `older:`<br>`newer:`<br>`before:`<br>`after:`<br>`released-before:`<br>`released-after:`<br><br>Examples:<br>`older:2005`<br>`older:2005/05/17`<br>`older:05/17/2005`<br>`newer:2010s`<br>`newer:2015/08/02`<br>`newer:08/02/2015`<br> |
 
-```
-plays-gt:400
-plays-after:2020-01-01 plays-before:2021-01-01   # Only count plays in 2020
-plays-in:2020    # Same as above
-```
+## Listening history
 
-## Filter Reference
+These require that the user has set up Last.fm or ListenBrainz integration to log their listening history.
 
-### Item Identifiers
+You can also sort by plays using the "Sort" dropdown menu, or the `sort` field if you're using the GraphQL API.
 
-(These are filters that can only return one or zero items, so all other filters will be ignored)
+| What to search                                                 | How to search it                                                                                                                                                                                                                                                                                                   |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Items with certain amount of total plays                       | `plays-gt:300`<br>`plays-lt:150`<br>                                                                                                                                                                                                                                                                               |
+| Items with certain amount of total plays within a certain year | `plays-gt:300 plays-in:2020`                                                                                                                                                                                                                                                                                       |
+| Items with certain amount of total plays before a certain year | `plays-gt:300 plays-before:2020`                                                                                                                                                                                                                                                                                   |
+| Items with certain amount of total plays within a date range   | `plays-gt:300 plays-after:2019/05/18 plays-before:2019/08/27`                                                                                                                                                                                                                                                      |
+| Items with last listened within a date range                   | `last-listened-after:2019/08/27`<br>`last-listened-after:2019`<br>`last-listened-after:2010s`<br><br>`last-listened-before:2019/08/27`<br>`last-listened-before:2019`<br>`last-listened-before:2010s`<br><br>`last-listened-on:2019/08/27`<br><br>`last-listened-in:2019`<br>`last-listened-in:2010s`<br>          |
+| Items with first listened within a date range                  | `first-listened-after:2019/08/27`<br>`first-listened-after:2019`<br>`first-listened-after:2010s`<br><br>`first-listened-before:2019/08/27`<br>`first-listened-before:2019`<br>`first-listened-before:2010s`<br><br>`first-listened-on:2019/08/27`<br><br>`first-listened-in:2019`<br>`first-listened-in:2010s`<br> |
 
-```
-id:
-mbid:
-rymId:
-spotifyId:
-```
+## Operators/Symbols
 
-### Filters
+| Operator                                       | Examples                                                                                      |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| OR                                             | `plays-gt:400 OR tag:favorites`<br>`(plays-gt:400) OR (tag:favorites)`                        |
+| NOT (-)                                        | `plays-gt:400 NOT tag:favorites`<br>`plays-gt:400 -tag:favorites`                             |
+| + (Required. Note: Only for terms, not fields) | `+dark +side +of +moon`<br><br>(this is NOT valid or necessary)<br>`+artistId:pink-floyd-uk1` |
+| (Grouping)                                     | `(plays-gt:400 OR rating-gt:8) AND tag:favorites`                                             |
+| "Quotes"                                       | `artist:"the dillinger escape plan"`                                                          |
 
-> [date-qualifier] = before/after/in: (YYY0s, YYYY, YYYY-MM, YYYY-MM-DD), on: (YYYY-MM-DD)
->
-> "gt" and "lt" will probably equate to "greater/less than or equal to" instead of "greater/less than", because this is probably the more common use case
+# Reference
 
-```
-added-[date-qualifier]:
-artist:
-artistId:
-first-listened-[date-qualifier]:
-folder:
-genre:
-has:artist-review
-has:favorite-tracks
-has:likes-dislikes
-has:review
-in:wishlist
-last-listened-[date-qualifier]:
-list:
-plays-gt:
-plays-lt:
-rating:
-rating-gt:
-rating-lt:
-released-[date-qualifier]:
-tag:
-updated-[date-qualifier]:
-```
+## Lucene Comparison
 
-### Not Implemented Yet
+[List of Lucene features](https://lucene.apache.org/core/7_7_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#package.description)
 
-```
-[custom-field]: Any custom field that the user has created, along with any valid value.
-in: (user/[user] or user/[user]/[view]) Whether the item also exists in another user's collection
-get:artists/items/tracks Which type of result should be returned (default: items)
-plays-[before/after]: This can be used to create a date range for plays, similar to Last.fm's functionality. (This will not be possible until we are storing play/scrobble data which is way in the future)
-view:[view] Whether the item exists in a view (which is basically a saved filter query)
-```
+| Feature                     |                    |
+| --------------------------- | ------------------ |
+| Wildcard searches           | :x:                |
+| Regular Expression Searches | :x:                |
+| Fuzzy Searches              | :x:                |
+| Proximity Searches          | :x:                |
+| Range Searches              | :question:         |
+| Boosting a Term             | :x:                |
+| Boolean Operators: OR       | :white_check_mark: |
+| Boolean Operators: AND      | :white_check_mark: |
+| Boolean Operators: +        | :white_check_mark: |
+| Boolean Operators: NOT      | :white_check_mark: |
+| Boolean Operators: -        | :white_check_mark: |
+| Grouping                    | :white_check_mark: |
+| Field Grouping              | :white_check_mark: |
+| Escaping Special Characters | :white_check_mark: |
