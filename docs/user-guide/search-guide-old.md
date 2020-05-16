@@ -146,3 +146,16 @@ not:([query])
 plays-[before/after]: This can be used to create a date range for plays, similar to Last.fm's functionality. (This will not be possible until we are storing play/scrobble data which is way in the future)
 view:[view] Whether the item exists in a view (which is basically a saved filter query)
 ```
+
+Other cool ideas:
+
+- `#` alias for `tag:`
+- `older_than:2d`, `newer_than:2d`
+
+Other search syntaxes to borrow from:
+
+- [Gmail](https://support.google.com/mail/answer/7190?hl=en)
+- [Google](https://support.google.com/websearch/answer/2466433?hl=en)
+- [GitHub](https://help.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests)
+- [MusicBrainz](https://musicbrainz.org/doc/Indexed_Search_Syntax)
+- [Lucene](https://lucene.apache.org/core/7_7_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Fields)
