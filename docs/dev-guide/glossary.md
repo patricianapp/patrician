@@ -286,6 +286,14 @@
 - **What do we use it for?** This is the framework we're currently using for the Patrician API.
 - **Alternatives:** There are many options for a GraphQL framework that we could go with. I've written prototypes for the basic functionality in Nest.js, Hasura, and a TypeORM/TypeGraphQL app from scratch before I found this framework which offers a lot out of the box. Warthog is a small project and we're still evaluating if it will fit our needs in the long run, but we've had success with it so far. If at some point it fails to do so, we may look at Hasura again (or perhaps Postgraphile) or re-build our API from scratch using either TypeORM/TypeGraphQL or experiment with other frameworks (Prisma2, graphql-yoga, etc).
 
+## Yarn
+
+[Official site](https://yarnpkg.com/)
+
+- **What is it?** A Node.js package management tool similar to the `npm` cli. Commonly used in the React community.
+- **What do we use it for?** This is the package management solution we use for our UI and API. This means that it's required to use this over `npm` in your local dev setup (although once npm v7 is released, you'll be able to use either one, since it will recognize `yarn.lock` files).
+- **Alternatives:** `npm` and `yarn` are both tools that do the same thing: install Node.js packages, keep versions in sync and manage dependencies. The Warthog framework was built with Yarn in mind, so that's the main reason I went with it. One other nice feature is the ability to run commands without typing `run`: `yarn start:dev` instead of `npm run start:dev`. Yarn used to be much faster than npm but nowadays there aren't very many differences between the two.
+
 ## ZenHub
 
 [Official site](https://www.zenhub.com/)

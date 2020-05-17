@@ -9,7 +9,7 @@ nav:
   - Home: index.md
   - Search Guide: user-guide/search-guide.md
   - Developers:
-      - Dev Glossary: dev-guide/glossary.md
+      - Glossary: dev-guide/glossary.md
       - Local Setup: dev-guide/dev-setup.md
 theme:
   name: 'material'

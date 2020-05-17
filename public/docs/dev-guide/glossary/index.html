@@ -19,7 +19,7 @@
     
     
       
-        <title>Dev Glossary - Patrician Docs</title>
+        <title>Glossary - Patrician Docs</title>
       
     
     
@@ -80,7 +80,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Dev Glossary
+              Glossary
             
           </span>
         </div>
@@ -238,14 +238,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Dev Glossary
+        Glossary
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
         </span>
       </label>
     
-    <a href="./" title="Dev Glossary" class="md-nav__link md-nav__link--active">
-      Dev Glossary
+    <a href="./" title="Glossary" class="md-nav__link md-nav__link--active">
+      Glossary
     </a>
     
       
@@ -509,6 +509,13 @@
         <li class="md-nav__item">
   <a href="#warthog" class="md-nav__link">
     Warthog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yarn" class="md-nav__link">
+    Yarn
   </a>
   
 </li>
@@ -820,6 +827,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#yarn" class="md-nav__link">
+    Yarn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zenhub" class="md-nav__link">
     ZenHub
   </a>
@@ -846,7 +860,7 @@
                   
                 
                 
-                  <h1>Dev Glossary</h1>
+                  <h1>Glossary</h1>
                 
                 <h2 id="amazon-aurora">Amazon Aurora</h2>
 <p><a href="https://aws.amazon.com/rds/aurora/">Official site</a></p>
@@ -1099,6 +1113,13 @@
 <li><strong>What is it?</strong> A GraphQL API framework for NodeJS that allows you to define your data model and API schema in one place and autogenerates CRUD operations with sorting, filtering, and pagination out of the box. Built on top of TypeORM and TypeGraphQL.</li>
 <li><strong>What do we use it for?</strong> This is the framework we're currently using for the Patrician API.</li>
 <li><strong>Alternatives:</strong> There are many options for a GraphQL framework that we could go with. I've written prototypes for the basic functionality in Nest.js, Hasura, and a TypeORM/TypeGraphQL app from scratch before I found this framework which offers a lot out of the box. Warthog is a small project and we're still evaluating if it will fit our needs in the long run, but we've had success with it so far. If at some point it fails to do so, we may look at Hasura again (or perhaps Postgraphile) or re-build our API from scratch using either TypeORM/TypeGraphQL or experiment with other frameworks (Prisma2, graphql-yoga, etc).</li>
+</ul>
+<h2 id="yarn">Yarn</h2>
+<p><a href="https://yarnpkg.com/">Official site</a></p>
+<ul>
+<li><strong>What is it?</strong> A Node.js package management tool similar to the <code>npm</code> cli. Commonly used in the React community.</li>
+<li><strong>What do we use it for?</strong> This is the package management solution we use for our UI and API. This means that it's required to use this over <code>npm</code> in your local dev setup (although once npm v7 is released, you'll be able to use either one, since it will recognize <code>yarn.lock</code> files).</li>
+<li><strong>Alternatives:</strong> <code>npm</code> and <code>yarn</code> are both tools that do the same thing: install Node.js packages, keep versions in sync and manage dependencies. The Warthog framework was built with Yarn in mind, so that's the main reason I went with it. One other nice feature is the ability to run commands without typing <code>run</code>: <code>yarn start:dev</code> instead of <code>npm run start:dev</code>. Yarn used to be much faster than npm but nowadays there aren't very many differences between the two.</li>
 </ul>
 <h2 id="zenhub">ZenHub</h2>
 <p><a href="https://www.zenhub.com/">Official site</a></p>
