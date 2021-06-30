@@ -1,11 +1,34 @@
-Patrician is an app that lets you show off your music collection in your own unique way, gathering and importing data from all of your music listening profiles.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-### Project Vision/Goals
-- **Import your entire library in minutes**: Add music from Spotify, Last.fm, Discogs, your local music player, and more. You can set up continuous imports to keep your collection up-to-date, and fine-tune the settings so it only adds the albums you want. Albums are automatically auto-tagged using the MusicBrainz database (but it's your choice to use the auto-tags or your own).
-- **Self-expression**: Your profile is an expression of your unique identity. You can customize the colors and layout of your profile, add custom images, text, and widgets to the sidebars, categorize your music the way you want, implement a custom rating system, and even write an "about me" page.
-- **Collection Management/Ratings**: Once you've set up your imports, you can add unlimited custom tags, write reviews for your albums and artists, organize your collection into folders, and many more advanced features.
-- **One Link to Rule Them All**: Your Patrician profile will be the all-encompassing way to share your music library with others, combining data from Spotify, Last.fm, RateYourMusic, Discogs, and more in an elegant, customizable fashion.
-- **Powerful Search**: Your collection can be searched, filtered, and compared with other collections using advanced search queries.
-- **Recommendation Inbox**: Users can share recommendations with each other, and manage lists of recommendations they've received (including outside of the platform).
-- **Public APIs**: Collections can be accessed and searched using our public API at no cost.
-- **Exporting**: Collections can always be exported, so you're never locked into the platform.
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

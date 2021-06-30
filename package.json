@@ -1,64 +1,22 @@
 {
-	"name": "patrician",
-	"version": "0.2.0-canary.0",
-	"private": true,
-	"author": "Patrician Team",
-	"scripts": {
-		"build": "next build",
-		"build:docs": "mkdocs build",
-		"dev": "next dev -p 8900",
-		"generate": "apollo client:codegen --endpoint http://localhost:8912/graphql --target typescript --includes=\"graphql/**/*.graphql\" --outputFlat",
-		"lint": "eslint './**/*.{js,ts,tsx}' --fix",
-		"prettier": "prettier \"./**/*.{js,ts,tsx}\" --write",
-		"start": "next start",
-		"start:docs": "mkdocs serve",
-		"test": "jest --verbose --coverage --passWithNoTests",
-		"test:watch": "jest --watch"
-	},
-	"dependencies": {
-		"@apollo/client": "^3.0.0-beta.39",
-		"@apollo/react-ssr": "^3.1.3",
-		"@material-ui/core": "^4.9.10",
-		"graphql": "^14.6.0",
-		"graphql-tag": "^2.10.3",
-		"isomorphic-unfetch": "^3.0.0",
-		"next": "^9.3.5",
-		"prop-types": "^15.7.2",
-		"react": "^16.13.0",
-		"react-dom": "^16.13.0"
-	},
-	"devDependencies": {
-		"@types/jest": "^25.2.1",
-		"@types/node": "^13.9.0",
-		"@types/react": "^16.9.23",
-		"@typescript-eslint/eslint-plugin": "^2.29.0",
-		"@typescript-eslint/parser": "^2.29.0",
-		"eslint": "^6.8.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-plugin-prettier": "^3.1.3",
-		"graphql-code-generator": "^0.18.2",
-		"graphql-codegen-typescript-client": "0.18.2",
-		"graphql-codegen-typescript-common": "0.18.2",
-		"graphql-codegen-typescript-react-apollo": "0.18.2",
-		"husky": "^4.2.5",
-		"jest": "^25.4.0",
-		"lint-staged": "^10.1.7",
-		"prettier": "^2.0.5",
-		"ts-jest": "^25.4.0",
-		"typescript": "^3.8.3"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged && tsc -p ./tsconfig.json && yarn test"
-		}
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/patricianapp/patrician.git"
-	},
-	"license": "GPL-3.0-or-later",
-	"bugs": {
-		"url": "https://github.com/patricianapp/patrician/issues"
-	},
-	"homepage": "https://patrician.app"
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.11",
+    "eslint": "7.29.0",
+    "eslint-config-next": "11.0.1",
+    "typescript": "4.3.4"
+  }
 }
