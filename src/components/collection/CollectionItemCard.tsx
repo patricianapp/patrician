@@ -13,10 +13,8 @@ import {
 	// Box,
 } from '@material-ui/core';
 import { positions } from '@material-ui/system';
-import { getCollection_user_collection } from '../../../__generated__/getCollection';
 import clsx from 'clsx';
-
-type CollectionItem = Omit<getCollection_user_collection, '__typename'>;
+import { CollectionItem } from '../../collection-item.interface';
 
 interface Props {
 	item: CollectionItem;
@@ -74,7 +72,7 @@ export default function CollectionItemCard({ item }: Props): ReactElement {
 	const [hovered, setHovered] = useState(false);
 	const styleProps = { hovered };
 	const classes = useStyles(styleProps);
-	const longText = item.title.length > 20; // TODO: Make this conditional based on width of card and title
+	const longText = item.Title.length > 20; // TODO: Make this conditional based on width of card and title
 
 	return (
 		<div style={{ height: '300px' }}>
@@ -90,19 +88,19 @@ export default function CollectionItemCard({ item }: Props): ReactElement {
 				<CardActionArea>
 					<CardMedia
 						component="img"
-						alt={`${item.title}`}
+						alt={`${item.Title}`}
 						height="200"
 						image={
-							item.itemDetails.coverArt
-								? item.itemDetails.coverArt
-								: `https://coverartarchive.org/release-group/${item.itemDetails.mbid}/front-250`
+							item.CoverArt
+								? item.CoverArt
+								: `https://coverartarchive.org/release-group/${item.MBID}/front-250`
 						}
-						title={`${item.title}`}
+						title={`${item.Title}`}
 					/>
 					<CardContent>
 						<div style={{ height: '30px' }}>
 							<Typography className={classes.itemText} gutterBottom>
-								{item.artist}{' '}
+								{item.Artist}{' '}
 							</Typography>
 						</div>
 						<div style={{ height: '30px' }}>
@@ -112,7 +110,7 @@ export default function CollectionItemCard({ item }: Props): ReactElement {
 								})}
 								gutterBottom
 							>
-								{item.title}{' '}
+								{item.Title}{' '}
 							</Typography>
 						</div>
 					</CardContent>

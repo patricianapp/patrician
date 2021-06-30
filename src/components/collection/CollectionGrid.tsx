@@ -1,9 +1,7 @@
 import React, { ReactElement } from 'react';
 import CollectionItemCard from './CollectionItemCard';
 import { Grid, makeStyles, createStyles, Theme } from '@material-ui/core';
-import { getCollection_user_collection } from '../../../__generated__/getCollection';
-
-type CollectionItem = Omit<getCollection_user_collection, '__typename'>;
+import { CollectionItem } from '../../collection-item.interface';
 
 interface Props {
 	collection: Array<CollectionItem>;

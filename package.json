@@ -9,11 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "nanoid": "^3.1.23",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-papaparse": "^3.16.1",
+    "redis": "^3.1.2"
   },
   "devDependencies": {
+    "@types/csv-parse": "^1.2.2",
     "@types/react": "17.0.11",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1",
