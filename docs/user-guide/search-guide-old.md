@@ -156,6 +156,7 @@ Other search syntaxes to borrow from:
 
 - [Gmail](https://support.google.com/mail/answer/7190?hl=en)
 - [Google](https://support.google.com/websearch/answer/2466433?hl=en)
+- [Slack](https://slack.com/help/articles/202528808-Search-in-Slack) (esp. date keywords: yesterday, today, week, month, year)
 - [GitHub](https://help.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests)
 - [MusicBrainz](https://musicbrainz.org/doc/Indexed_Search_Syntax)
 - [Lucene](https://lucene.apache.org/core/7_7_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Fields)
