@@ -2,7 +2,7 @@ import dynamic from 'next/dynamic';
 import React, { ReactElement } from 'react';
 
 const DynamicCollection = dynamic(
-	() => import('../../src/components/collection/Collection'),
+	() => import('../../../src/components/collection/Collection'),
 	{ ssr: false }
 );
 
