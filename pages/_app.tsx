@@ -1,7 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { CollectionProvider } from '../src/contexts/CollectionContext';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+interface CustomAppProps extends AppProps {
+	collectionUrl: string;
 }
-export default MyApp
+
+function MyApp({ Component, pageProps, collectionUrl }: CustomAppProps) {
+	return (
+		<CollectionProvider>
+			<Component {...pageProps} />
+		</CollectionProvider>
+	);
+}
+export default MyApp;

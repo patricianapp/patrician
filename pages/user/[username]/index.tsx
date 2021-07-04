@@ -1,29 +1,20 @@
-import dynamic from 'next/dynamic';
-import React, { ReactElement } from 'react';
+import { useRouter } from 'next/router';
+import React, { ReactElement, useContext, useEffect } from 'react';
+import Collection from '../../../src/components/collection/Collection';
+import { CollectionContext } from '../../../src/contexts/CollectionContext';
+import { fetchCollectionIfEmpty } from '../../../src/helpers/fetch-collection';
 
-const DynamicCollection = dynamic(
-	() => import('../../../src/components/collection/Collection'),
-	{ ssr: false }
-);
+export default function UserPage(): ReactElement {
+	const router = useRouter();
+	const { username } = router.query;
+	const { collection, setCollection } = useContext(CollectionContext);
+	useEffect(() => {
+		if (setCollection && username) {
+			fetchCollectionIfEmpty(collection, setCollection, username.toString());
+		}
+	}, [username]);
 
-const mockDb: Record<string, string> = {
-	ejackson:
-		'https://raw.githubusercontent.com/FOSSforlife/music-collection/main/collection.csv',
-};
+	if (!collection) return <div>Loading...</div>;
 
-interface Props {
-	collectionUrl: string;
-}
-
-export async function getServerSideProps({ params }: { params: { username: string } }) {
-	// TODO: Fetch URL from redis
-	return {
-		props: {
-			collectionUrl: mockDb[params.username],
-		}, // will be passed to the page component as props
-	};
-}
-
-export default function UserPage({ collectionUrl }: Props): ReactElement {
-	return <DynamicCollection collectionUrl={collectionUrl}></DynamicCollection>;
+	return <Collection collection={collection}></Collection>;
 }
